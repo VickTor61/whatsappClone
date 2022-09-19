@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
+import ChatbarHeader from "./chatbarHeader/ChatbarHeader";
+import CharbarFooter from "./chatbarFooter/CharbarFooter";
+import Chat from "./Chat/Chat.js"
+import "./Chatbar.css";
 
-import './Chatbar.css'
+const Chatbar = () => {
+  return (
+    <div className="chatbar">
+     <ChatbarHeader />
 
-class Chatbar extends Component {
-    render() {
-        return (
-            <div className='chatbar'>
-            </div>
-        );
-    }
-}
+     {/* body */}
+     <Chat />
+     <CharbarFooter />
+    </div>
+  );
+};
 
 export default Chatbar;

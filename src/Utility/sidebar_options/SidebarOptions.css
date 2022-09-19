@@ -1,0 +1,29 @@
+.sidebar_options {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: .5rem 0;
+    position: absolute;
+    z-index: 1;
+    width: 12.5rem;
+    right: .3rem;
+    margin-top: 5px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px #b1a1a179;
+    color: rgb(109, 100, 100);
+    transition: all 3s;
+    /* transform: translateY(0); */
+    animation: slidein .5s ease-in .5s;
+}
+
+/* @keyframes slidein {
+    transition: all .2s ease-in;
+} */
+
+.sidebar_options > p {
+    padding: .7rem 1.3rem;
+}
+.sidebar_options > p:hover {
+    background-color: #ededed;
+    cursor: pointer;
+}

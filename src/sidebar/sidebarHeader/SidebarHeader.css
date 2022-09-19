@@ -1,0 +1,15 @@
+.sidebar_header {
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 0 15px;
+  }
+  .sidebar_header_icons {
+    color: rgb(158, 151, 151);
+    position: relative;
+  }
+  .sidebar_header_icons > .MuiButtonBase-root:not(:last-child) {
+    /* margin-right: 5px; */
+  }

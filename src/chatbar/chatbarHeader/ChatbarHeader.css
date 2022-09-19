@@ -1,0 +1,23 @@
+.chatbar_header {
+  background-color: #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  padding: 0 15px;
+}
+.chatbar_header_left {
+}
+
+.chatbar_header_right {
+  color: rgb(158, 151, 151);
+  display: flex;
+  position: relative;
+}
+.chatbar_header_right > *:not(:last-child) {
+  margin-right: 20px;
+}
+
+.chatbar_icon_border {
+  border-right: 1px solid rgb(158, 151, 151);
+}

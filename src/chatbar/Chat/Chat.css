@@ -1,0 +1,29 @@
+.chat {
+  float: right;
+  margin-right: 1rem;
+}
+
+.chat_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat_content > h4 {
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+
+.chat_info {
+  display: flex;
+  background-color: aquamarine;
+  padding: 0.7rem 0.5rem;
+  border-radius: 10px;
+}
+
+.chat_info > p {
+  margin-right: .7rem;
+}
+.chat_info > span {
+  font-size: 0.6rem;
+  align-self: flex-end;
+}

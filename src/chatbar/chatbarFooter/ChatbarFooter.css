@@ -1,0 +1,31 @@
+.chatbar_footer {
+    height: 4rem;
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 7px ;
+}
+
+.chatbar_footer > .MuiButtonBase-root:nth_child(3) {
+    margin: 0 4px;
+}
+
+.chatbar_footer > input {
+    width: 100%;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    height: 40px;
+    margin-right: 4px;
+    padding-left: 1rem;
+}
+/* .chatbar_footer > input::placeholder {
+} */
+
+.chatbar_footer > .MuiButtonBase-root:nth-child(2) {
+    transform: rotate(-45deg);
+    margin-right: 3px;
+}

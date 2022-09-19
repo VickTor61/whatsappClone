@@ -1,6 +1,26 @@
 .sidebar {
-    flex: 0.3;
-    min-width: 14rem;
-    border-right: 1px solid rgba(179, 176, 176, 0.534);
-    background-color: white;
+  flex: 0.3;
+  min-width: 22rem;
+  border-right: 1px solid rgba(179, 176, 176, 0.534);
+  background-color: white;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar_new_chat {
+  background-color: #ededed;
+  padding: 1rem 1.5rem;
+}
+.sidebar_room_container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  height: 67%;
+  width: 100%;
+  position: absolute;
+}
+
+.sidebar_room_container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }

@@ -1,0 +1,16 @@
+.sidebar_room {
+  display: flex;
+  align-items: center;
+  padding-left: .6rem;
+}
+
+.sidebar_room:hover {
+  cursor: pointer;
+  background-color: #e7f0ea83;
+}
+.room_content {
+  margin-left: 1rem;
+  border-bottom: 1px solid rgba(201, 193, 193, 0.329);
+  flex: 1;
+  padding: .9rem 0;
+}

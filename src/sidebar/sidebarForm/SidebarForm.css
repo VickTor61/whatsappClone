@@ -1,0 +1,44 @@
+.sidebar_form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(158, 151, 151);
+  border-bottom: 1px solid rgba(202, 197, 197, 0.459);
+  padding: 8px 0;
+}
+
+.sidebar_form_field {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 12px;
+  width: 100%;
+  position: relative;
+}
+
+.sidebar_form_field > input {
+  height: 35px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  background-color: #eee;
+  width: 100%;
+  padding-left: 4.5rem;
+}
+
+.sidebar_form_field > input::placeholder {
+  color: rgb(126, 121, 121);
+
+
+}
+
+.sidebar_form_field > .MuiSvgIcon-root {
+  width: 20px;
+  position: absolute;
+  left: 5px;
+  margin-left: 10px;
+  color: rgb(97, 86, 86);
+}
+
+.sidebar_form > .MuiSvgIcon-root {
+  margin: 0 10px;
+}
