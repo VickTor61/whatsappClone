@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import db from "../firebase"
-import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { useState, useEffect } from "react";
+import db from "../firebase";
+import { onSnapshot, collection, query, addDoc } from "firebase/firestore";
 import SidebarHeader from "./sidebarHeader/SidebarHeader";
 import SidebarForm from "./sidebarForm/SidebarForm";
 import SidebarChat from "./sidebarChat/SidebarChat";
@@ -8,52 +8,60 @@ import "./Sidebar.css";
 
 const Sidebar = () => {
   const [room, setRoom] = useState([]);
-  const roomCollection = useRef(collection(db, "rooms"));
 
   const createroom = () => {
     const roomName = prompt("Create a room");
     var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
 
-     roomName && writeData(roomName, date)
-  }
+    roomName && writeData(roomName, date);
+  };
 
-const writeData = async (name, timestamp) => {
-  try {
-    const docRef = await addDoc(collection(db, "rooms"), {
-      name,
-      timestamp
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
-
-useEffect(() => {
-    const getRoomdata = async () => {
-      const data = await getDocs(roomCollection.current);
-      const folderData = await data.docs.map(doc => {
-        return {id: doc.id, rooms: doc.data()}
+  const writeData = async (name, timestamp) => {
+    try {
+      const docRef = await addDoc(collection(db, "rooms"), {
+        name,
+        timestamp,
       });
-      setRoom(folderData)
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
     }
+  };
 
-    getRoomdata()
-}, [roomCollection])
+  useEffect(() => {
+    try {
+      const collectionName = query(collection(db, "rooms"));
+      const unsub = onSnapshot(collectionName, (querySnapshot) => {
+        setRoom(
+          querySnapshot.docs.map((d) => ({
+            id: d.id,
+            data: d.data(),
+          }))
+        );
+      });
 
-// console.log(room)
+      return () => {
+        unsub();
+      };
+    } catch (e) {
+      console.log("No internet");
+    }
+  }, []);
 
   return (
     <div className="sidebar">
       <SidebarHeader />
       <SidebarForm />
       <h2 className="sidebar_new_chat" onClick={createroom}>Add new chat</h2>
-      <div className="sidebar_room_container">
-      { room.length !== 0 && room.map(data => <SidebarChat key={data.id} roomName={data.rooms.name} timestamp={data.rooms.timestamp} />)}
-      </div>
+      <SidebarChat roomList={room} />
     </div>
   );
-}
+};
 
 export default Sidebar;

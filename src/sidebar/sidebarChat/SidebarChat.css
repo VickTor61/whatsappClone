@@ -1,7 +1,37 @@
+.sidebar_room_container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  height: -webkit-fill-available;
+  width: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.sidebar_room_container::-webkit-scrollbar-button {
+  display: block;
+}
+
+.sidebar_room_container::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+  margin-top: -38px;
+  margin-bottom: -38px;
+}
+
+.sidebar_room_container::-webkit-scrollbar-thumb {
+  background-color: rgba(209, 204, 204, 0.767);
+}
+
+.sidebar_room_container::-webkit-scrollbar {
+  width: 10px;
+}
+
 .sidebar_room {
   display: flex;
   align-items: center;
-  padding-left: .6rem;
+  padding-left: 0.6rem;
 }
 
 .sidebar_room:hover {
@@ -12,5 +42,5 @@
   margin-left: 1rem;
   border-bottom: 1px solid rgba(201, 193, 193, 0.329);
   flex: 1;
-  padding: .9rem 0;
+  padding: 0.9rem 0;
 }

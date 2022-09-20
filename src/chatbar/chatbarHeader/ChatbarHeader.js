@@ -14,7 +14,6 @@ const ChatbarHeader = () => {
   const handleChatOptions = () => {
    chatOptions ? setChatOptions(false) : setChatOptions(true) 
   }
-  console.log(chatOptions)
 
   return (
     <div className="chatbar_header">
