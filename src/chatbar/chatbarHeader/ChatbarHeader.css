@@ -4,9 +4,20 @@
   align-items: center;
   justify-content: space-between;
   height: 4rem;
-  padding: 0 15px;
+  padding-left:15px;
 }
 .chatbar_header_left {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  margin-right: 2rem;
+}
+
+.chatbar_header_data {
+  margin-left: 1rem;
+  flex: 1 1;
+  align-self: center;
+  justify-self: center
 }
 
 .chatbar_header_right {
@@ -14,7 +25,7 @@
   display: flex;
   position: relative;
 }
-.chatbar_header_right > *:not(:last-child) {
+.chatbar_header_right > button {
   margin-right: 20px;
 }
 
