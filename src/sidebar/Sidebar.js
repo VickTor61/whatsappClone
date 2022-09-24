@@ -6,7 +6,7 @@ import SidebarForm from "./sidebarForm/SidebarForm";
 import SidebarChat from "./sidebarChat/SidebarChat";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({userImage}) => {
   const [room, setRoom] = useState([]);
 
   const createroom = () => {
@@ -56,7 +56,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <SidebarHeader />
+      <SidebarHeader userImage={userImage} />
       <SidebarForm />
       <h2 className="sidebar_new_chat" onClick={createroom}>Add new chat</h2>
       <SidebarChat roomList={room} />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useStateValue } from "../../StateProvider";
 import DataUsageIcon from "@mui/icons-material/DataUsage";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AddIcon from "@mui/icons-material/Add";
@@ -9,17 +10,17 @@ import "./SidebarHeader.css";
 
 
 const SidebarHeader = () => {
+  const [{ user }, dispatch] = useStateValue()
   const [showSidebarOptions, setSidebarOptions] = useState(false)
   
-const handleSidebarOptions = () => {
-  !showSidebarOptions ? setSidebarOptions(true) : setSidebarOptions(false)
-}
-  
+  const handleSidebarOptions = () => {
+    !showSidebarOptions ? setSidebarOptions(true) : setSidebarOptions(false)
+  }
 
   return (
     <div className="sidebar_header">
       <div className="sidebar_header_avatar">
-        <Avatar alt="image_avatar" />
+        <Avatar alt="image_avatar" src={user?.photoURL} />
       </div>
       <div className="sidebar_header_icons">
         <IconButton>
