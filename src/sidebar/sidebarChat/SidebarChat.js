@@ -6,7 +6,6 @@ import "./SidebarChat.css";
 
 const SidebarChat = ({ roomList }) => {
 
-
   return (
     <div className="sidebar_room_container">
       { roomList.map((response) => (
@@ -14,7 +13,7 @@ const SidebarChat = ({ roomList }) => {
             <Avatar {...stringAvatar(response.data.name)} />
             <div className="room_content">
               <h4>{response.data.name}</h4>
-              <p>{response.data.timestamp}</p>
+              <p>last message</p>
             </div>
          </Link>
         ))}

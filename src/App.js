@@ -14,7 +14,7 @@ function App() {
       <div className="app_body">
         {user ? (
           <Router>
-            <Sidebar userImage={"fak"} />
+            <Sidebar />
             <Routes>
               <Route path="/" element={<img src={nochat} alt="no_chat" />} />
               <Route

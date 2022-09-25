@@ -11,3 +11,33 @@
   background-color: #ededed;
   padding: 1rem 1.5rem;
 }
+
+.sidebar_room_container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  height: -webkit-fill-available;
+  width: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.sidebar_room_container::-webkit-scrollbar-button {
+  display: block;
+}
+
+.sidebar_room_container::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+  margin-top: -38px;
+  margin-bottom: -38px;
+}
+
+.sidebar_room_container::-webkit-scrollbar-thumb {
+  background-color: rgba(209, 204, 204, 0.767);
+}
+
+.sidebar_room_container::-webkit-scrollbar {
+  width: 10px;
+}

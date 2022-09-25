@@ -9,14 +9,12 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import CallIcon from "@mui/icons-material/Call";
 import ChatbarOptions from "../../Utility/chatbar_options/ChatbarOptions";
 import stringAvatar from "../../Utility/avatar";
-
 import "./ChatbarHeader.css";
 
-const ChatbarHeader = () => {
+const ChatbarHeader = ({ lastMessage }) => {
   const [chatOptions, setChatOptions] = useState(false);
   const [chatHeaderData, setchatHeaderData] = useState("");
   const { roomId } = useParams();
-
 
   const handleChatOptions = () => {
     chatOptions ? setChatOptions(false) : setChatOptions(true);
@@ -39,7 +37,11 @@ const ChatbarHeader = () => {
         <Avatar alt="image_avatar" {...stringAvatar(chatHeaderData.name)} />
         <div className="chatbar_header_data">
           <p>{chatHeaderData.name}</p>
-          <p>{chatHeaderData.timestamp}</p>
+          <p>
+            Last seen{" "}
+            {lastMessage &&
+              new Date(lastMessage.data.timestamp?.toDate()).toUTCString()}
+          </p>
         </div>
       </div>
       <div className="chatbar_header_right">
