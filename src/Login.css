@@ -1,0 +1,22 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.auth_img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.auth > footer {
+  height: 1rem;
+  width: 100%;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+}
