@@ -42,7 +42,7 @@ const Chatbar = () => {
 
   return (
     <div className="chatbar">
-     <ChatbarHeader lastMessages={messages[messages - 1]} />
+     <ChatbarHeader lastMessage={messages[messages.length - 1]} />
      <Chat messages={messages} />
      <CharbarFooter />
     </div>

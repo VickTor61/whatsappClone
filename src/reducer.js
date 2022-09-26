@@ -1,5 +1,5 @@
 export const initialState = {
-  user: "fe",
+  user: "",
   messages: ""
 };
 
